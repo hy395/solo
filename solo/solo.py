@@ -121,7 +121,7 @@ def main():
         raise TypeError(msg)
 
     if issparse(scvi_data.X):
-        scvi_data.X = scvi_data.X.todense()
+        scvi_data.X = scvi_data.X.toarray()
     num_cells, num_genes = scvi_data.X.shape
 
     if args.known_doublets is not None:
